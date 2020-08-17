@@ -15,18 +15,10 @@ export class HeroesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    let result = this.getPrice();
-
-    result.id 
+    
 
   }
 
-  getPrice(): Hero {
-    return {
-      id: 9,
-      name: "hello"
-    }
-  }
 
   onSelect(hero: Hero): void{ 
     this.selectedHero = hero;
