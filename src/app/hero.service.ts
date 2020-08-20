@@ -18,7 +18,12 @@ export class HeroService {
   getHeroes(): Observable<Hero[]> {
     // TODO: send the message _after_ fetching the heroes
     // 普通はreturn of(HEROES)の前にGET REQUESTとかfetchしてるからここにメソッドを置く
-    this.messageService.add("HeroService: fetched heroes"); 
+    this.messageService.add('HeroService: fetched heroes');
     return of(HEROES); //of(HEROES)? -> HEROSがたくさんあるからofを使う ここは普通はapi call
+  }
+
+  getHero(id: number): Observable<Hero>{
+    this.messageService.add(`HeroService: fetched hero id = ${id}`)
+    return of(HEROES.find(hero => hero.id === id));
   }
 }
